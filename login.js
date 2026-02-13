@@ -17,14 +17,14 @@ function showToast(message, type) {
     const toastText = document.getElementById("toastText");
     const toastBox = document.getElementById("regMessage");
 
-    // Message and Style (success/error) set pannuvom
+    // Message and Style (success/error)
     toastText.innerText = message;
     toastBox.className = "toast-box toast-" + type;
 
-    // Toast box-ah mela irundhu keela vara vaippom
+
     toastContainer.classList.add("show");
 
-    // 3 seconds appram thirumba mela poyidum
+  
     setTimeout(() => {
         toastContainer.classList.remove("show");
     }, 3000);
@@ -98,7 +98,7 @@ registerFormBtn.addEventListener("click", async (event) => {
             setTimeout(() => {
                 container.classList.remove('active');
                 
-                // Form fields-ah clear panna
+               
                 document.getElementById("newuser").value = "";
                 document.getElementById("newemail").value = "";
                 document.getElementById("newpassword").value = "";
@@ -110,4 +110,5 @@ registerFormBtn.addEventListener("click", async (event) => {
         console.error("Error:", error);
         showToast("Server Error! Connection failed.", "error");
     }
+
 });
