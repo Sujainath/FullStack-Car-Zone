@@ -1,7 +1,7 @@
-// 1. Mobile Number Limitation (10 digits only)
+// 1. Mobile Number Limitation 
 function limitContact(input) {
     if (input.value.length > 10) {
-        input.value = input.value.slice(0, 10); // 11vathu digit-ah cut pannidum
+        input.value = input.value.slice(0, 10); 
     }
 }
 
@@ -15,25 +15,23 @@ function showToast(message, type) {
 
     toastText.innerText = message;
     
-    // Type-ku yethapadi border color (Success = Green, Error = Red)
+   
     toastBox.style.borderLeftColor = (type === "success") ? "#2ecc71" : "#e74c3c";
 
-    // Message-ah screen-la kaatta (Ippo idhu 'Contact Our Team' mela theryum)
     container.style.display = "block"; 
 
-    // 4 seconds kalichu automatic-ah hide aagum
+
     setTimeout(() => {
         container.style.display = "none";
     }, 4000);
 }
 
-// 3. Form Submission with Backend Integration
+
 document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const phoneInput = document.getElementById('inq_phone').value;
 
-    // CLIENT-SIDE VALIDATION: 10 digits irukundha-nu check pannuvom
     if (phoneInput.length !== 10) {
         showToast("Please enter a valid 10-digit mobile number", "error");
         return;
@@ -48,7 +46,7 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
     };
 
     try {
-        // Backend API-ku data-va anupuroam
+       
         const response = await fetch('http://localhost:8080/api/contact/send', {
             method: 'POST',
             headers: {
@@ -58,9 +56,9 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
         });
 
         if (response.ok) {
-            // SUCCESS: Message Sent Successfully! nu mela varum
+          
             showToast("Message Sent Successfully!", "success");
-            this.reset(); // Form clear aagum
+            this.reset(); 
         } else {
             showToast("Failed to send message. Try again!", "error");
         }
@@ -68,4 +66,5 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
         console.error("Error:", error);
         showToast("Server Error! Check your connection.", "error");
     }
+
 });
