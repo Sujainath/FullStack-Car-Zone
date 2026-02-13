@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="carlogo.png">
+  <link rel="stylesheet" href="contact.css">
+  <title>Car Zone</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+  <header class="headsection">
+    <div class="logo">
+      <img src="carlogo.png" alt="Car Logo">
+      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAR ZONE</h1>
+    </div>
+
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="car.html">Cars</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <div id="toastContainer" class="toast-container" style="display: none; text-align: center; margin-top: 20px; width: 100%;">
+    <div id="regMessage" class="toast-box" style="background: white; padding: 8px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71; display: inline-block; width: fit-content; margin: 0 auto;">
+      <span id="toastText" style="color: #333; font-weight: bold; font-size: 15px;"></span>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <h2 class="section-title">Contact Our Team</h2>
+    <p class="section-subtitle">
+      Have questions about our premium Cars? Our team is ready to assist with your car rental needs.
+    </p>
+
+    <div class="contact-container">
+
+      <div class="info-box">
+        <div class="info-card">
+          <h3 style="display: flex; align-items: center; gap: 8px;">
+            <img src="whatssapp-removebg-preview.png" style="height: 30px;">
+            WhatsApp
+          </h3>
+          <p style="margin-left: 40px;">+91 9894091604</p>
+        </div>
+
+        <div class="info-card">
+          <h3 style="display: flex; align-items: center; gap: 8px; margin-left: 10px;">
+            <img src="gmail.png" style="height: 20px;">
+            Gmail
+          </h3>
+          <p style="margin-left: 40px;"> info@carzoneservice.com</p>
+        </div>
+
+        <div class="info-card">
+          <h3 style="display: flex; align-items: center; gap: 8px; margin-left: 10px;">
+            <img src="hourglass.png" style="height: 20px;">
+            Hours
+          </h3>
+          <p style="margin-left: 40px;">Mon-Sat: 8AM-8PM<br>Sunday: 10AM-6PM</p>
+        </div>
+
+        <div class="info-card offer">
+          <h3 style="display: flex; align-items: center; gap: 8px; margin-left: 10px;">
+            <img src="offer.png" style="height: 20px;">
+            Special Offer
+          </h3>
+          <p style="margin-left: 40px;">Book for 3+ days and get 20% discount</p>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3>Send Your Inquiry</h3><br>
+
+        <form id="inquiryForm">
+          <div class="form-grid">
+            <input id="inq_name" type="text" placeholder="Full Name" required>
+            <input id="inq_email" type="email" placeholder="Email Address" required>
+            
+            <input id="inq_phone" type="number" placeholder="Phone Number" required oninput="limitContact(this)">
+
+            <select id="inq_category" required>
+              <option value="">Select Car Category</option>
+              <option>Premium</option>
+              <option>Maruti Suzuki</option>
+              <option>Tata</option>
+              <option>Mahindra</option>
+              <option>Toyota</option>
+              <option>Kia</option>
+              <option>Hyundai</option>
+              <option>Skoda</option>
+              <option>Renault</option>
+              <option>Honda</option>
+              <option>Volkswagen</option>
+            </select>
+          </div>
+
+          <textarea id="inq_message" placeholder="Tell us about your rental needs..." required></textarea>
+
+          <button type="submit" class="send-btn">Send Message 💬</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <h2>CAR ZONE</h2>
+      <p>Premium car rental service with the latest models.</p>
+    </div>
+
+    <div class="quick-links">
+      <h3>Quick Links</h3>
+      <a href="home.html">Home</a><br>
+      <a href="car.html">Cars</a><br>
+      <a href="bookings.html">Bookings</a><br>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="contact-footer">
+      <h3>Contact Us</h3>
+      <p style="display: flex; align-items: center; gap: 8px;">
+        <img src="gps.png" style="height: 25px;">
+        Bengaluru, Karnataka 560001.
+      </p><br>
+      <p style="display: flex; align-items: center; gap: 8px;">
+        <img src="call.png" style="height: 20px;">
+        +91 9894091604
+      </p><br>
+      <p style="display: flex; align-items: center; gap: 8px;">
+        <img src="gmail.png" style="height: 20px;">
+        info@carzoneservice.com
+      </p>
+    </div>
+
+    <div class="newsletter">
+      <h3>Get Exclusive Car Deals</h3>
+      <p class="newsletter-text">
+        Join 5,000+ happy riders. 
+      </p>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

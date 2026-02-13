@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+/* Header */
+.headsection {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  background: rgba(20,20,20,0.4);
+
+  padding: 15px 40px;
+  border-radius: 50px;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 40px;
+}
+.logo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: orange;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: orange;
+}
+
+/* Login */
+.login {
+  text-align: right;
+}
+.login a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 15px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+.login a:hover {
+  background: orange;
+}
+.login i {
+  margin-right: 6px;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 550px;
+}
+.car-details{
+    color: darkorange;
+}
+.car-sections{
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: auto auto;
+  flex-wrap: wrap;
+  background-color: #000;
+  padding: 40px;
+}
+
+.car-card {
+  background-color: #0a0a0a;
+  border: 1px solid #1c1c1c;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 570px;
+  color: white;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 136, 0, 0.1);
+  margin-left: 8px;
+
+  display: flex;          /* NEW */
+  gap: 20px;              /* NEW */
+  padding: 20px;          /* NEW */
+  align-items: flex-start;/* NEW */
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(255, 136, 0, 0.3);
+}
+
+.car-card img {
+  width: 260px;        /* NEW - fixed width */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px; /* Make image rounded */
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 10px;      /* Bottom side */
+  left: 10px;        /* Left side */
+  background: linear-gradient(90deg, #ff8800, #ff6600);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.car-content {
+  padding: 0;        /* NEW */
+  width: 100%;       /* NEW */
+}
+
+.car-content h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.car-type {
+  color: #ff8800;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;   /* One by one line */
+  gap: 8px;
+  font-size: 15px;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+.book-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff8800, #ff6600);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.book-btn {
+    text-decoration: none;
+}
+.book-btn:hover {
+  background: linear-gradient(90deg, #ff9e00, #ff6600);
+  box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
+}
+@media(max-width: 700px){
+  .car-card {
+    flex-direction: column; /* Image top, content bottom */
+    width: 100%;
+  }
+
+  .car-card img {
+    width: 100%;
+  }
+
+  .price-tag {
+    top: 160px;
+    left: 20px;
+  }
+}
+.features div {
+  display: flex;
+  align-items: center;
+  gap: 6px;   /* space between image and text */
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="carlogo.png">
+  <title>Car Zone</title>
+  <link rel="stylesheet" href="home.css">
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+
+  <!-- Header -->
+  <header class="headsection">
+    <div class="logo">
+      <img src="carlogo.png" alt="Car Logo">
+      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAR ZONE</h1>
+    </div>
+
+    <nav class="navbar">
+      <a href="home.html" class="active">Home</a>
+      <a href="car.html">Cars</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  <div class="logout-container">
+    <img src="logout.png" alt="Logout Icon">
+    <a href="#" onclick="handleLogout()" class="logout-btn">Logout</a>
+</div>
+    
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <div class="hero-text">
+        <h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 40px; color: darkorange;">CAR ZONE</h4>
+        <h2>Book the car to instant drive.</h2>
+        <p>Rent your dream car. Transparent pricing. Book in seconds.</p>
+        <button class="shine-btn" onclick="window.location.href='car.html'" >See Cars</button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FontAwesome for icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <!--Main Section-->
+ <main class="mainsection" style="background-color: #000; margin-top: -33px; padding: 60px 0; text-align: center;">
+
+  <!-- Small Label -->
+  <div style="display: inline-block; background-color: #111; border-radius: 50px; padding: 8px 20px; color: #ffc107; font-weight: 500; font-size: 14px;">
+    ⚡ Premium Car Section
+  </div>
+
+  <!-- Main Heading -->
+  <h1 style="color: #ff8800; font-size: 48px; font-weight: bold; margin-top: 20px;">
+    Our Top Most Premium Cars
+  </h1>
+
+  <!-- Subtext -->
+  <p style="color: #bbb; font-size: 18px; max-width: 700px; margin: 10px auto;">
+    Choose the favourite vehicles with exceptional performance and comfort for your next journey
+  </p>
+  <br>
+  <section class="car-section">
+  <div class="car-card">
+    <img src="C1.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Tesla Model S</h3>
+      <p class="car-type">Luxury Electric</p>
+     <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px;"> 4-5 Seats</div>
+        <div>⚡ Electric (AMT)</div>
+        <div style="margin-left: 8px;"> <img src="performance.png" style="width: 20px; height: 18px;"> 600 km </div><br>
+        <div>💎 Premium</div>
+      </div>
+        
+      <button class="book-btn" onclick="window.location.href='bookings.html'" >Book Now →</button>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <img src="C2.png" alt="BMW M5">
+    <div class="price-tag">₹40000/day</div>
+    <div class="car-content">
+      <h3>BMW M5</h3>
+      <p class="car-type">Sports Sedan</p>
+    <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px;"> 4-5 Seats</div>
+        <div>⚡ Electric (AMT)</div>
+        <div > <img src="performance.png" style="width: 20px; height: 18px;"> 300 km </div><br>
+        <div style="margin-left: 8px;" >💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'" >Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="C6.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Porsche 911</h3>
+      <p class="car-type">Sports Car</p>
+      <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px;"> 4-5 Seats</div><br>
+        <div>⚡ Electric (AMT)</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 230 km</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'" >Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="C5.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Range Rover Velar</h3>
+      <p class="car-type">Premium SUV</p>
+       <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px;"> 4-5 Seats</div><br>
+        <div>⚡ Electric (AMT)</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 280 km</div>
+        <div style="margin-left: 22px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="C7.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Lamborghini Huracan</h3>
+      <p class="car-type">Sports Car</p>
+      <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 2 Seats</div><br>
+        <div style="margin-left: 10px;">⚡ Electric (AMT)</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 180 km</div>
+        <div style="margin-left: 22px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="C8.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Ferrari F8 Tributo</h3>
+      <p class="car-type">Sports Car</p>
+      <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 2   Seats</div><br>
+        <div style="margin-left: 10px;">⚡ Electric (AMT)</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 230 km</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="toyota vellfire.jpg" alt="Toyota Vellfire">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Toyota Vellfire</h3>
+      <p class="car-type">Luxury </p>
+      <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 5-6 Seats</div><br>
+        <div style="margin-left: 24px;"><img src="fuel-nozzle.png" style="width: 20px; height: 20px;"> Petrol</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 19.28 kmpl</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="HC5.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Nissan Altima</h3>
+      <p class="car-type">Luxury Electric</p>
+     <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 4-5  Seats</div><br>
+        <div >⚡ Electric (AMT)</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 320 km</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="rolls.jpg" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Rolls Royce Phantom</h3>
+      <p class="car-type">Luxury </p>
+      <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 5-6 Seats</div><br>
+        <div style="margin-left: 5px;"><img src="fuel-nozzle.png" style="width: 20px; height: 20px;"> Petrol</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 7.1 kmpl</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+   <div class="car-card">
+    <img src="HC3.png" alt="Tesla Model S">
+    <div class="price-tag">₹30000/day</div>
+    <div class="car-content">
+      <h3>Volkswagen Golf</h3>
+      <p class="car-type">Luxury </p>
+       <div class="features">
+        <div> <img src="car-removebg-preview.png" style="width: 20px; height: 13px; "> 5-6 Seats</div><br>
+        <div style="margin-left: 15px;"><img src="fuel-nozzle.png" style="width: 20px; height: 20px;"> Petrol</div>
+        <div> <img src="performance.png" style="width: 20px; height: 18px;"> 22.5 kmpl</div>
+        <div style="margin-left: 20px;">💎 Premium</div>
+      </div>
+      <button class="book-btn" onclick="window.location.href='bookings.html'">Book Now →</button>
+    </div>
+  </div>
+ 
+  </div>
+</section>
+
+<section class="testimonial-section">
+  <div class="section-label">⭐ Customer Experiences</div>
+  <h1 class="section-title">Premium Drive Experiences</h1>
+  <p class="section-subtitle">
+    Hear from our valued customers about their journey with our premium fleet
+  </p>
+
+  <div class="testimonials">
+    <div class="testimonial-card">
+      <p class="quote">"The BMW 5 Series was impeccable! Smooth ride and excellent service with ample space. Will definitely rent again."</p>
+      <div class="car-tag">BMW 5 Series</div>
+      <div class="user">
+        <div class="user-icon">V</div>
+        <div>
+          <h4>Vijay</h4>
+          <p>Business Traveler</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">"Perfect family Toyota Highlander with ample space. Clean, well-maintained, and great value for money."</p>
+      <div class="car-tag"> Toyota Highlander</div>
+      <div class="user">
+        <div class="user-icon">R</div>
+        <div>
+          <h4>Rohit Sharma</h4>
+          <p>Family Vacation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="quote">"Convertible Ford Mustang made our trip unforgettable! 24/7 support was a lifesaver and great value for money."</p>
+      <div class="car-tag"> Ford Mustang</div>
+      <div class="user">
+        <div class="user-icon">E</div>
+        <div>
+          <h4>Elon Musk</h4>
+          <p>Road Trip Enthusiast</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="stat">
+    <h2 class="count" data-target="10000">0</h2>
+    <p>Happy Customers</p>
+  </div>
+  <div class="stat">
+    <h2 class="count" data-target="250">0</h2>
+    <p>Luxury Vehicles</p>
+  </div>
+  <div class="stat">
+    <h2 class="count" data-target="24">0</h2>
+    <p>Support Hours</p>
+  </div>
+  <div class="stat">
+    <h2 class="count" data-target="50">0</h2>
+    <p>Locations</p>
+  </div>
+</section>
+
+
+</main>
+<!-- FOOTER -->
+<footer class="footer" >
+
+  <div class="footer-logo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAR ZONE</h2>
+    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Premium car rental service with the latest models.</p>
+  </div>
+
+  <div class="quick-links" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Quick Links</h3>
+    <a href="home.html">Home</a><br>
+
+    <a href="car.html">Cars</a><br>
+    <a href="bookings.html">Bookings</a><br>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <div class="contact-footer">
+    <h3>Contact Us</h3>
+         <p style="display: flex; align-items: center; gap: 8px;">
+  <img src="gps.png" style="height: 25px;">
+  Bengaluru, Karnataka 560001.
+         </p><br>
+    
+   <p style="display: flex; align-items: center; gap: 8px;">
+  <img src="call.png" style="height: 20px;">
+ +91 9894091604
+         </p><br>
+    <p style="display: flex; align-items: center; gap: 8px;">
+  <img src="gmail.png" style="height: 20px;">
+ info@carzoneservice.com
+         </p>
+  </div>
+
+  <div class="newsletter">
+      <h3>Get Exclusive Car Deals</h3>
+  <p class="newsletter-text">
+    Join 5,000+ happy riders. No spam. Only offers 
+  </p>
+  </div>
+
+</footer>
+<div id="logoutModal" class="modal" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Confirm Account Logout</h2>
+        <p>Please enter your details to logout.</p>
+        
+        <div class="input-group">
+            <h1 style="font-size: 24px; color: #333; margin-bottom: 5px; text-align: center;">Logout!</h1>
+            <input type="text" id="confirmEmail" placeholder="Email" required>
+        </div>
+        
+        <div class="input-group">
+            <input type="password" id="confirmPassword" placeholder="Password" required>
+        </div>
+        
+        <div class="modal-buttons" style="margin-top: 20px;">
+            <button onclick="confirmDelete()" class="delete-confirm-btn">Logout</button>
+            <button onclick="closeModal()" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="toastContainer" class="toast-container">
+    <div id="regMessage" class="toast-box">
+        <span id="toastIcon"></span>
+        <span id="toastText"></span>
+    </div>
+</div>
+
+<script src="home.js"></script>
+
+
+</body>
+</html>

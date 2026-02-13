@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="carlogo.png">
+  <link rel="stylesheet" href="bookings.css">
+  <title>Car Zone</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    
+  <header class="headsection">
+    <div class="logo">
+      <img src="carlogo.png" alt="Car Logo">
+      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAR ZONE</h1>
+    </div>
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="car.html">Cars</a>
+      <a href="bookings.html" class="active">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  
+  </header>
+
+  <br>
+  <center>
+    <h1 style="color: rgb(0, 255, 119);"> Booking Form </h1>
+    <br>
+    
+    <section class="form-box">
+      <div class="form-grid">
+        <form id="carBookingForm">
+          <div class="inputs">
+            <input id="fname" type="text" placeholder="First Name" required><br><br>
+            <input id="lname" type="text" placeholder="Last Name" required><br><br>
+            <input id="email" type="email" placeholder="Email Id" required><br><br>
+            <input id="dob" type="text" onfocus="(this.type='date')" placeholder="Date of Birth" required><br><br>
+            
+           <div id="toastContainer" class="toast-container" style="display: none; margin-bottom: 15px; text-align: center;">
+    <div id="regMessage" class="toast-box" style="
+        background: white; 
+        padding: 8px 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        border-left: 5px solid #2ecc71;
+        display: inline-block; /* Idhu dhaan box-ah short panna mukkiyam */
+        width: fit-content;    /* Content-ku yetha maadhiri adjust aagum */
+        max-width: 80%;        /* Romba chinna screen-la veliya pogaama irukka */
+        margin: 0 auto;
+    ">
+        <span id="toastText" style="color: #333; font-weight: bold; font-size: 15px;"></span>
+    </div>
+</div>
+
+            <input id="contact" type="number" placeholder="Contact Number" required oninput="limitContact(this)"><br><br>
+            
+            <input id="state" type="text" placeholder="State"><br><br>
+            <input id="district" type="text" placeholder="District"><br><br>
+            <input id="city" type="text" placeholder="City/Town"><br><br>
+            <input id="startDate" type="date" required><br><br>
+            <input id="returnDate" type="date" required><br><br>
+
+            <select id="carCategory" required onchange="updateModels()">
+              <option value="">Select Car Company</option>
+              <option value="Premium">Premium</option>
+              <option value="Maruti Suzuki">Maruti Suzuki</option>
+              <option value="Tata">Tata</option>
+              <option value="Mahindra">Mahindra</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Kia">Kia</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Skoda">Skoda</option>
+              <option value="Renault">Renault</option>
+              <option value="Honda">Honda</option>
+              <option value="Volkswagen">Volkswagen</option>
+            </select><br><br>
+
+            <select id="carModel" required>
+              <option value="">Select Car Model</option>
+            </select><br><br>
+
+            <input id="members" type="number" placeholder="How Many Members?" required><br><br>
+            <button type="submit" id="bookingSubmit" class="send-btn"><b>Submit Booking</b></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </center>
+
+  <div id="successMessage" style="display: none; text-align: center; margin-top: 20px;">
+      <div class="tick-container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h2 style="color: #00ff77; margin-top: 10px;"><b>Booking Sent!</b></h2>
+      <p style="color: white;"><b>Our team will contact you soon.</b></p>
+      <button onclick="location.reload()" class="send-btn" style="width: 150px; margin-top: 15px;"><b>Book Another</b></button>
+  </div>
+
+  <script src="bookings.js"></script>
+</body>
+</html>
