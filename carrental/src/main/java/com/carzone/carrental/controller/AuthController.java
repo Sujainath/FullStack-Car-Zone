@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*") // Idhu dhaan connection error-ah fix pannum
+@CrossOrigin(origins = "*") // To fix the connect error
 public class AuthController {
 
     @Autowired
@@ -28,14 +28,13 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
-        // Inga user anupura 'email' field-la irukura value-ah,
-        // namma database-la email-layum check panrom, username-layum check panrom.
+
         Optional<User> dbUser = userRepository.findByEmailOrUsername(user.getEmail(), user.getEmail());
 
         if (dbUser.isPresent() && dbUser.get().getPassword().equals(user.getPassword())) {
             Map<String, String> response = new HashMap<>();
             response.put("token", "valid-user-token");
-            response.put("username", dbUser.get().getUsername()); // Username-ah frontend-ku anupuroam
+            response.put("username", dbUser.get().getUsername()); //  To transfer the username to frontend
             return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(401).body("Invalid Username/Email or Password");
@@ -43,18 +42,19 @@ public class AuthController {
     }
     @DeleteMapping("/delete-account")
     public ResponseEntity<?> deleteAccount(@RequestParam String email, @RequestParam String password) {
-        // 1. First email vachu user-ah kandupidippom
+        // 1. First check email 
         Optional<User> user = userRepository.findByEmail(email);
 
-        // 2. User irundha, password match aagudha-nu check pannuvom
+        // 2. If the user email is there next to check the password is correct
         if (user.isPresent() && user.get().getPassword().equals(password)) {
             userRepository.delete(user.get());
             Map<String, String> response = new HashMap<>();
             response.put("message", "Account deleted successfully");
             return ResponseEntity.ok(response);
         } else {
-            // Email thappa irundhaalo illa password match aagala-naalo error kaattum
+            // If there is no email,
             return ResponseEntity.status(401).body("Invalid Email or Password. Delete failed!");
         }
     }
+
 }
