@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/bookings")
-@CrossOrigin(origins = "*") // Frontend JS fetch connect aaga idhu romba mukkiyam
+@CrossOrigin(origins = "*") 
 public class BookingController {
 
     @Autowired
@@ -17,11 +17,12 @@ public class BookingController {
     @PostMapping
     public ResponseEntity<?> createBooking(@RequestBody Booking booking) {
         try {
-            // Frontend-la irundhu vara data-va database-la save panrom
+            // sent the datas to database
             Booking savedBooking = bookingRepository.save(booking);
             return ResponseEntity.ok(savedBooking);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error: " + e.getMessage());
         }
     }
+
 }
