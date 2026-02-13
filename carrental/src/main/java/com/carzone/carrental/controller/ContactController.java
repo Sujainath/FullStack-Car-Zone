@@ -22,11 +22,12 @@ public class ContactController {
         try {
             contactRepository.save(contact);
             Map<String, String> response = new HashMap<>();
-            // 'add' ku badhula 'put' use pannanum
+            
             response.put("message", "Inquiry sent successfully!");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error saving inquiry");
         }
     }
+
 }
