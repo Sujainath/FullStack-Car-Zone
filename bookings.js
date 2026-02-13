@@ -1,17 +1,17 @@
-// 1. Date Validation - Past dates-ah block panradhu
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Current date-ah eduthu YYYY-MM-DD format-ku maathuroam
+
     const today = new Date().toISOString().split('T')[0];
 
     const startDateInput = document.getElementById('startDate');
     const returnDateInput = document.getElementById('returnDate');
 
     if (startDateInput && returnDateInput) {
-        // Innaiku date-ku munnadi irukura dates-ah disable panroam
+     
         startDateInput.setAttribute('min', today);
         returnDateInput.setAttribute('min', today);
 
-        // Start Date select panna udane, Return Date-ah minimum 'Start Date'-ku lock panroam
+
         startDateInput.addEventListener('change', () => {
             returnDateInput.setAttribute('min', startDateInput.value);
         });
@@ -106,7 +106,7 @@ document.getElementById('carBookingForm').addEventListener('submit', function(e)
         .then((message) => {
             showToast(message, "success");
 
-            // 1.5 seconds wait panni form-ah hide panni Success Message-ah kaaturom
+           
             setTimeout(() => {
                 document.querySelector('.form-box').style.display = 'none';
                 document.querySelector('center > h1').style.display = 'none';
@@ -137,4 +137,5 @@ function saveBookingData(data) {
             reject("Could not connect to Server.");
         });
     });
+
 }
