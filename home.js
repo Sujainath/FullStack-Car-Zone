@@ -42,14 +42,13 @@ function showToast(message, type) {
     const toastText = document.getElementById("toastText");
     const toastBox = document.getElementById("regMessage");
 
-    // Message and Style (success/error) set pannuvom
+    // Message and Style (success/error)
     toastText.innerText = message;
     toastBox.className = "toast-box toast-" + type;
 
-    // Toast box-ah mela irundhu keela vara vaippom
     container.classList.add("show");
 
-    // 3 seconds appram thirumba mela poyidum
+  
     setTimeout(() => {
         container.classList.remove("show");
     }, 3000);
@@ -85,18 +84,18 @@ async function confirmDelete() {
             closeModal();
             showToast("Logout Successfully!", "success"); 
 
-            // 2 seconds gap vittu redirect pannuvom
             setTimeout(() => {
                 sessionStorage.clear();
                 window.location.href = "login.html";
             }, 2000);
 
         } else {
-            // ERROR: Backend invalid credentials-nu sonna
+
             showToast("Invalid Email or Password!", "error");
         }
     } catch (error) {
         console.error("Error:", error);
         showToast("Server Error! Connection failed.", "error");
     }
+
 }
