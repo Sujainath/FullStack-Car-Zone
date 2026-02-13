@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
-    // Basic CRUD operations (Save, Find, Delete) ellame Spring JPA pathupom.
+
+
 }
