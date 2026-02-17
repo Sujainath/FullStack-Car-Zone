@@ -1,0 +1,41 @@
+CarZone - Full Stack Car Rental Management System
+
+A comprehensive Full Stack Web Application designed to streamline car rental bookings and user inquiries. This project showcases a modern, responsive frontend integrated with a robust Java-based backend.
+
+---
+Key Features
+
+* Dynamic Car Catalog: Browse through a variety of car brands and models with a clean UI.
+* Interactive Booking Engine: A smart booking form that dynamically updates car models based on the selected brand.
+* Client-Side Validation:Date Logic: Past dates are automatically disabled for pickups using JavaScript.
+    * Data Integrity:Phone number inputs are restricted to exactly 10 digits to prevent user error.
+* Modern User Feedback:Replaced traditional browser alerts with custom **Toast Notifications** for a premium user experience.
+* RESTful API Architecture: A Java Spring Boot backend handles all data processing and communicates with the database via REST endpoints.
+* Responsive UI:** Optimized for a seamless experience across Mobile, Tablet, and Desktop devices.
+
+---
+Tech Stack
+
+Frontend:
+* HTML5 & CSS3: For structured layouts and custom styling/animations.
+* JavaScript: For DOM manipulation, dynamic form logic, and Fetch API integration.
+
+Backend:
+* Java: Core programming language.
+* Spring Boot:Framework for building the REST API and managing dependencies.
+* Spring Data JPA / Hibernate: For Object-Relational Mapping (ORM) and database management.
+
+Database:
+* MySQL:Used for persistent data storage of user bookings and contacts.
+
+---
+Project Directory Structure
+
+```text
+├── src/main/java           # Java Backend (Controllers, Entities, Repositories)
+├── src/main/resources      # Application configurations & MySQL settings
+├── images                  # Project assets (Car gallery & UI images)
+├── index.html              # Main Landing Page
+├── car.html                # Car Listing & Fleet Page
+├── css/                    # Custom CSS files
+└── js/                     # Client-side JavaScript & API logic
