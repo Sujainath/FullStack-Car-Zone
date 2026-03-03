@@ -15,17 +15,15 @@ function showToast(message, type) {
 
     toastText.innerText = message;
     
-   
+    // Success-na pachai, error-na sivapu border
     toastBox.style.borderLeftColor = (type === "success") ? "#2ecc71" : "#e74c3c";
 
     container.style.display = "block"; 
-
 
     setTimeout(() => {
         container.style.display = "none";
     }, 4000);
 }
-
 
 document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -46,8 +44,8 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
     };
 
     try {
-       
-        const response = await fetch('http://localhost:8080/api/contact/send', {
+        // --- RENDER URL UPDATED HERE ---
+        const response = await fetch('https://car-zone-application.onrender.com/api/contact/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +54,6 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
         });
 
         if (response.ok) {
-          
             showToast("Message Sent Successfully!", "success");
             this.reset(); 
         } else {
@@ -66,5 +63,4 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
         console.error("Error:", error);
         showToast("Server Error! Check your connection.", "error");
     }
-
 });
