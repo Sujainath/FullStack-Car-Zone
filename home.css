@@ -544,8 +544,37 @@ input {
     font-weight: 600;
     color: #333;
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media screen and (max-width: 768px) {
+    
+    .container, .form-box, .main-content {
+        width: 95% !important;
+        margin: 10px auto !important;
+        padding: 15px !important;
+    }
+    input, select, textarea, button {
+        width: 100% !important;
+        font-size: 16px !important; 
+        margin-bottom: 10px !important;
+    }
 
+    
+    .toggle-container {
+        display: none; 
+    }
+
+   
+    .table-responsive {
+        overflow-x: auto;
+        display: block;
+    }
+    .stats-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 /* Success & Error colors for the side border */
 .toast-success { border-left-color: #2ecc71; }
 .toast-error { border-left-color: #e74c3c; }
+
 .toast-warning { border-left-color: #f1c40f; }
