@@ -21,10 +21,8 @@ function showToast(message, type) {
     toastText.innerText = message;
     toastBox.className = "toast-box toast-" + type;
 
-
     toastContainer.classList.add("show");
 
-  
     setTimeout(() => {
         toastContainer.classList.remove("show");
     }, 3000);
@@ -45,7 +43,8 @@ loginFormBtn.addEventListener("click", async (event) => {
     }
 
     try {
-        const response = await fetch('http://localhost:8080/api/auth/login', {
+        // --- RENDER URL UPDATED HERE ---
+        const response = await fetch('https://car-zone-application.onrender.com/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: identifier, password: password })
@@ -86,7 +85,8 @@ registerFormBtn.addEventListener("click", async (event) => {
     }
 
     try {
-        const response = await fetch('http://localhost:8080/api/auth/register', {
+        // --- RENDER URL UPDATED HERE ---
+        const response = await fetch('https://car-zone-application.onrender.com/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password })
@@ -98,7 +98,6 @@ registerFormBtn.addEventListener("click", async (event) => {
             setTimeout(() => {
                 container.classList.remove('active');
                 
-               
                 document.getElementById("newuser").value = "";
                 document.getElementById("newemail").value = "";
                 document.getElementById("newpassword").value = "";
@@ -110,5 +109,4 @@ registerFormBtn.addEventListener("click", async (event) => {
         console.error("Error:", error);
         showToast("Server Error! Connection failed.", "error");
     }
-
 });
