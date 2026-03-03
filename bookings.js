@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const today = new Date().toISOString().split('T')[0];
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const returnDateInput = document.getElementById('returnDate');
 
     if (startDateInput && returnDateInput) {
-     
+      
         startDateInput.setAttribute('min', today);
         returnDateInput.setAttribute('min', today);
 
@@ -106,7 +105,7 @@ document.getElementById('carBookingForm').addEventListener('submit', function(e)
         .then((message) => {
             showToast(message, "success");
 
-           
+            
             setTimeout(() => {
                 document.querySelector('.form-box').style.display = 'none';
                 document.querySelector('center > h1').style.display = 'none';
@@ -121,7 +120,8 @@ document.getElementById('carBookingForm').addEventListener('submit', function(e)
 // 7. Backend Fetch Function
 function saveBookingData(data) {
     return new Promise((resolve, reject) => {
-        fetch('http://localhost:8080/api/bookings', {
+        // --- RENDER URL UPDATED HERE ---
+        fetch('https://car-zone-application.onrender.com/api/bookings', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
