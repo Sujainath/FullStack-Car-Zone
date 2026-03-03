@@ -181,4 +181,36 @@ textarea {
 
 @keyframes stroke { 100% { stroke-dashoffset: 0; } }
 @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+
 @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 40px #00ff77; } }
+
+
+/* --- MOBILE RESPONSIVE FIX --- */
+@media screen and (max-width: 768px) {
+    
+    .container, .form-box, .main-content {
+        width: 95% !important;
+        margin: 10px auto !important;
+        padding: 15px !important;
+    }
+    input, select, textarea, button {
+        width: 100% !important;
+        font-size: 16px !important; 
+        margin-bottom: 10px !important;
+    }
+
+    
+    .toggle-container {
+        display: none; 
+    }
+
+   
+    .table-responsive {
+        overflow-x: auto;
+        display: block;
+    }
+    .stats-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
