@@ -544,6 +544,13 @@ input {
     font-weight: 600;
     color: #333;
 }
+
+/* Success & Error colors for the side border */
+.toast-success { border-left-color: #2ecc71; }
+.toast-error { border-left-color: #e74c3c; }
+
+.toast-warning { border-left-color: #f1c40f; }
+
 /* --- MOBILE RESPONSIVE FIX --- */
 @media screen and (max-width: 768px) {
     
@@ -573,8 +580,4 @@ input {
         text-align: center;
     }
 }
-/* Success & Error colors for the side border */
-.toast-success { border-left-color: #2ecc71; }
-.toast-error { border-left-color: #e74c3c; }
 
-.toast-warning { border-left-color: #f1c40f; }
