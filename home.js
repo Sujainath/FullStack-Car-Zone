@@ -1,6 +1,6 @@
 // --- 1. LOGIN CHECK (Access Control) ---
 if (!sessionStorage.getItem("userToken")) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 // --- 2. STATS COUNTER LOGIC ---
@@ -86,7 +86,7 @@ async function confirmDelete() {
 
             setTimeout(() => {
                 sessionStorage.clear();
-                window.location.href = "login.html";
+                window.location.href = "index.html";
             }, 2000);
 
         } else {
@@ -97,3 +97,4 @@ async function confirmDelete() {
         showToast("Server Error! Connection failed.", "error");
     }
 }
+
