@@ -48,7 +48,6 @@ function showToast(message, type) {
 
     container.classList.add("show");
 
-  
     setTimeout(() => {
         container.classList.remove("show");
     }, 3000);
@@ -75,7 +74,8 @@ async function confirmDelete() {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/api/auth/delete-account?email=${emailInput}&password=${passwordInput}`, {
+        // --- RENDER URL UPDATED HERE ---
+        const response = await fetch(`https://car-zone-application.onrender.com/api/auth/delete-account?email=${emailInput}&password=${passwordInput}`, {
             method: 'DELETE'
         });
 
@@ -90,12 +90,10 @@ async function confirmDelete() {
             }, 2000);
 
         } else {
-
             showToast("Invalid Email or Password!", "error");
         }
     } catch (error) {
         console.error("Error:", error);
         showToast("Server Error! Connection failed.", "error");
     }
-
 }
