@@ -65,7 +65,7 @@ loginFormBtn.addEventListener("click", async (event) => {
         }
     } catch (error) {
         console.error("Error:", error);
-        showToast("Server Error! Backend connect aagala.", "error");
+        showToast("Server Error! Backend is not connect .", "error");
     }
 });
 
