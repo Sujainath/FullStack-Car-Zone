@@ -1,3 +1,47 @@
+/* Render cold-start popup */
+const _overlay = document.createElement('div');
+_overlay.innerHTML = `
+<div id="render-popup" style="
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:99999;
+  align-items:center;
+  justify-content:center;">
+  <div style="
+    background:#fff; border-radius:12px;
+    padding:2rem 2.5rem; max-width:340px;
+    width:90%; text-align:center;
+    border-top:4px solid #2E75B6;
+    font-family:sans-serif;">
+    <div style="font-size:2rem;margin-bottom:10px">⏳</div>
+    <p style="font-weight:700;color:#1A3557;
+      font-size:16px;margin:0 0 8px">
+      Please wait!
+    </p>
+    <p style="color:#444;font-size:14px;
+      line-height:1.6;margin:0 0 1rem">
+      The backend is connecting - this may take
+      up to <strong>50 seconds</strong>.
+      Thank you for your patience!
+    </p>
+    <button onclick="
+      document.getElementById('render-popup')
+      .style.display='none'"
+      style="background:#2E75B6;color:#fff;
+      border:none;border-radius:6px;
+      padding:8px 24px;font-size:14px;
+      cursor:pointer;">
+      Got it!
+    </button>
+  </div>
+</div>`;
+document.body.appendChild(_overlay.firstElementChild);
+
+setTimeout(() => {
+  const p = document.getElementById('render-popup');
+  p.style.display = 'flex';
+}, 3000);
+
 const container = document.querySelector('.container');
 const registerBtn = document.querySelector('.register-btn');
 const loginBtn = document.querySelector('.login-btn');
