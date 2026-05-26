@@ -137,5 +137,39 @@ function saveBookingData(data) {
             reject("Could not connect to Server.");
         });
     });
+    // Active nav link highlight
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".navbar a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  } else {
+    link.classList.remove("active");
+  }
+});
+
+// Hamburger toggle
+const hamburger = document.getElementById("hamburger");
+const navbar = document.getElementById("navbar");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  navbar.classList.toggle("open");
+});
+
+// Close menu when a nav link is clicked
+navbar.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("open");
+    navbar.classList.remove("open");
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
+    hamburger.classList.remove("open");
+    navbar.classList.remove("open");
+  }
+});
 
 }
