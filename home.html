@@ -17,12 +17,21 @@
       <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAR ZONE</h1>
     </div>
 
-    <nav class="navbar">
-      <a href="home.html" class="active">Home</a>
-      <a href="car.html">Cars</a>
-      <a href="bookings.html">Bookings</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+   <!-- Hamburger Button -->
+<button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="navbar" id="navbar">
+  <a href="home.html" class="active">Home</a>
+  <a href="car.html">Cars</a>
+  <a href="bookings.html">Bookings</a>
+  <a href="contact.html">Contact</a>
+  <!-- Logout inside mobile menu -->
+  <a href="#" onclick="handleLogout()" class="logout-mobile">Logout</a>
+</nav>
 
   <div class="logout-container">
     <img src="logout.png" alt="Logout Icon">
