@@ -12,8 +12,7 @@
    BODY
    ============================================ */
 body {
-  background: url("homepage.jpg") no-repeat center center/cover;
-  background-color: #000;
+  background-color: #000;  /* Remove the homepage.jpg from here */
   min-height: 100vh;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -163,6 +162,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: url("homepage.jpg") no-repeat center center/cover;
+  position: relative;
 }
 
 .hero-text {
