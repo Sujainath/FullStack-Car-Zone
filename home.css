@@ -5,6 +5,115 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger to X animation */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Logout link inside mobile menu — hidden on desktop */
+.logout-mobile {
+  display: none;
+}
+
+/* ==============================
+   TABLET & MOBILE — max 768px
+   ============================== */
+@media (max-width: 768px) {
+
+  .headsection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 12px 20px;
+    width: 95%;
+    position: relative;
+  }
+
+  .logo img { width: 80px; }
+  .logo h1  { font-size: 18px; }
+
+  /* Show hamburger */
+  .hamburger { display: flex; }
+
+  /* Hide desktop logout */
+  .logout-container { display: none; }
+
+  /* Show logout inside mobile menu */
+  .logout-mobile {
+    display: block !important;
+    color: orange !important;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+
+  /* Mobile navbar hidden by default */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(12px);
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-top: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  /* Open state */
+  .navbar.open {
+    display: flex;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    width: 100%;
+    padding-bottom: 6px;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE — max 480px
+   ============================== */
+@media (max-width: 480px) {
+  .headsection { padding: 10px 14px; width: 98%; }
+  .logo img    { width: 60px; }
+  .logo h1     { font-size: 15px; }
+  .navbar a    { font-size: 0.95rem; }
+}
 
 /* Hero background - full image */
 body {
