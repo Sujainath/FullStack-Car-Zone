@@ -39,7 +39,7 @@ document.body.appendChild(_overlay.firstElementChild);
 
 setTimeout(() => {
   const p = document.getElementById('render-popup');
-  p.style.display = 'flex';
+  if (p) p.style.display = 'flex';
 }, 3000);
 
 const container = document.querySelector('.container');
@@ -47,21 +47,26 @@ const registerBtn = document.querySelector('.register-btn');
 const loginBtn = document.querySelector('.login-btn');
 
 // --- 1. UI Toggle Logic ---
-registerBtn.addEventListener('click', () => {
-    container.classList.add('active');
-});
+if (registerBtn) {
+    registerBtn.addEventListener('click', () => {
+        container.classList.add('active');
+    });
+}
 
-loginBtn.addEventListener('click', () => {
-    container.classList.remove('active');
-});
+if (loginBtn) {
+    loginBtn.addEventListener('click', () => {
+        container.classList.remove('active');
+    });
+}
 
-// --- 2. TOAST NOTIFICATION LOGIC (Unique White Box) ---
+// --- 2. TOAST NOTIFICATION LOGIC ---
 function showToast(message, type) {
     const toastContainer = document.getElementById("toastContainer");
     const toastText = document.getElementById("toastText");
     const toastBox = document.getElementById("regMessage");
 
-    // Message and Style (success/error)
+    if (!toastContainer || !toastText || !toastBox) return;
+
     toastText.innerText = message;
     toastBox.className = "toast-box toast-" + type;
 
@@ -72,84 +77,93 @@ function showToast(message, type) {
     }, 3000);
 }
 
-// --- 3. LOGIN LOGIC (Username or Email support) ---
+// --- 3. LOGIN LOGIC ---
 const loginFormBtn = document.getElementById("accountlogin");
 
-loginFormBtn.addEventListener("click", async (event) => {
-    event.preventDefault();
+if (loginFormBtn) {
+    loginFormBtn.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-    const identifier = document.getElementById("username").value; 
-    const password = document.getElementById("password").value;
+        const identifier = document.getElementById("username").value; 
+        const password = document.getElementById("password").value;
 
-    if (!identifier || !password) {
-        showToast("Please fill all fields!", "warning");
-        return;
-    }
-
-    try {
-        // --- RENDER URL UPDATED HERE ---
-        const response = await fetch('https://car-zone-application.onrender.com/api/auth/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: identifier, password: password })
-        });
-
-        if (response.ok) {
-            const user = await response.json();
-            sessionStorage.setItem("userToken", user.token); 
-            sessionStorage.setItem("userName", user.username);
-            
-            showToast("Login Successful! Redirecting...", "success");
-            
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 1500);
-        } else {
-            showToast("Invalid Username/Email or Password!", "error");
+        if (!identifier || !password) {
+            showToast("Please fill all fields!", "warning");
+            return;
         }
-    } catch (error) {
-        console.error("Error:", error);
-        showToast("Server Error! Backend is not connect .", "error");
-    }
-});
+
+        try {
+            // FIX: Sending both username & email to match whatever your Spring Boot DTO expects
+            const response = await fetch('https://car-zone-application.onrender.com/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    username: identifier, 
+                    email: identifier, 
+                    password: password 
+                })
+            });
+
+            if (response.ok) {
+                const user = await response.json();
+                sessionStorage.setItem("userToken", user.token); 
+                sessionStorage.setItem("userName", user.username || identifier);
+                
+                showToast("Login Successful! Redirecting...", "success");
+                
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1500);
+            } else {
+                showToast("Invalid Username/Email or Password!", "error");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            showToast("Server Error! Backend is not connected.", "error");
+        }
+    });
+}
 
 // --- 4. REGISTER LOGIC ---
 const registerFormBtn = document.getElementById("registeruser");
 
-registerFormBtn.addEventListener("click", async (event) => {
-    event.preventDefault();
+if (registerFormBtn) {
+    registerFormBtn.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-    const username = document.getElementById("newuser").value;
-    const email = document.getElementById("newemail").value;
-    const password = document.getElementById("newpassword").value;
+        const username = document.getElementById("newuser").value;
+        const email = document.getElementById("newemail").value;
+        const password = document.getElementById("newpassword").value;
 
-    if (!username || !email || !password) {
-        showToast("Please fill all fields!", "warning");
-        return;
-    }
-
-   try {
-        const response = await fetch('http://localhost:8080/api/auth/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, email, password })
-        });
-
-        if (response.ok) {
-            showToast("Registered Successfully!", "success");
-
-            setTimeout(() => {
-                container.classList.remove('active');
-                
-                document.getElementById("newuser").value = "";
-                document.getElementById("newemail").value = "";
-                document.getElementById("newpassword").value = "";
-            }, 2000);
-        } else {
-            showToast("Registration Failed! Try again.", "error");
+        if (!username || !email || !password) {
+            showToast("Please fill all fields!", "warning");
+            return;
         }
-    } catch (error) {
-        console.error("Error:", error);
-        showToast("Server Error! Connection failed.", "error");
-    }
-});
+
+        try {
+            // FIX: Changed localhost to Live Render URL
+            const response = await fetch('https://car-zone-application.onrender.com/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, email, password })
+            });
+
+            if (response.ok) {
+                showToast("Registered Successfully! Please Login.", "success");
+
+                setTimeout(() => {
+                    container.classList.remove('active');
+                    
+                    document.getElementById("newuser").value = "";
+                    document.getElementById("newemail").value = "";
+                    document.getElementById("newpassword").value = "";
+                }, 2000);
+            } else {
+                showToast("Registration Failed! Try again.", "error");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            showToast("Server Error! Connection failed.", "error");
+        }
+    });
+}
