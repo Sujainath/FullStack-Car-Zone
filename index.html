@@ -9,6 +9,15 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
+  <!-- Popup Structure -->
+<div id="render-popup" style="display: none;">
+  <div class="popup-backdrop"></div>
+  <div class="popup-box">
+    <h3>Waking up the server... ⏳</h3>
+    <p>Please hold on! Since this site is hosted on a free instance, it takes about <strong>30 to 45 seconds</strong> to spin up on your first visit.</p>
+    <button id="close-popup-btn" onclick="closePopup()">Got it!</button>
+  </div>
+</div>
 
   <div id="toastContainer" class="toast-container">
     <div id="regMessage" class="toast-box">
