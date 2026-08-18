@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('render-popup');
+  const closeBtn = document.getElementById('close-popup-btn');
+
+  // Open popup after 2 seconds
+  setTimeout(() => {
+    if (popup) {
+      popup.classList.remove('popup-hidden');
+    }
+  }, 2000);
+
+  // Close popup on button click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      popup.classList.add('popup-hidden');
+    });
+  }
+});
+
+
 setTimeout(() => {
   const p = document.getElementById('render-popup');
   if (p) p.style.display = 'flex';
